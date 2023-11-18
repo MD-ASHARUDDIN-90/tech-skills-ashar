@@ -1,0 +1,93 @@
+/* styles.css */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  background-color: rgb(0, 0, 0);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  color: white;
+}
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  border: 1px solid white;
+  width: 100%;
+  overflow: hidden;
+  text-align: right;
+  margin-bottom: 10px;
+  animation: cardAnimation 4s infinite alternate ease-in-out;
+  transition: transform 0.3s ease-out, background-color 0.3s ease-out,
+    color 0.3s ease-out;
+}
+
+@keyframes cardAnimation {
+  0% {
+    transform: translateY(0) scale(1) rotate(0);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+  }
+  100% {
+    transform: translateY(-5%) scale(1.05) rotate(3deg);
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+  }
+}
+
+.card:hover {
+  animation: none;
+  transform: translateX(-10%) scale(1.1) rotate(3deg);
+  background-color: rgba(255, 255, 255, 1);
+  color: black;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.card h2,
+.card h4 {
+  margin: 0;
+  padding: 10px;
+}
+
+.card h2 {
+  font-size: 1.5em;
+}
+
+.card h4 {
+  font-size: 1em;
+}
+
+@media (min-width: 768px) {
+  .main {
+    height: 100vh;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
